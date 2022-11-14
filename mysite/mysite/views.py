@@ -5,8 +5,8 @@ from django.shortcuts import render
 def index(request):
     return HttpResponse('welcome to django predator rock it main')
 def predator(request):
-    params={'name':'Aamir','age':24,'place':'delhi'}
-    return render(request,'index.html',params)
+    # params={'name':'Aamir','age':24,'place':'delhi'}
+    return render(request,'index.html')
     #  return HttpResponse("hello james")
 def about(request):
     return HttpResponse("about predator <a href='/'>back</a>")
@@ -19,3 +19,6 @@ def markup(request):
     return HttpResponse('<a href="https://www.leetcode.com/"target="_blank">Visit W3Schools.com!</a>')
 def pre(request):
     return HttpResponse('hello buddy django')
+def capi(request):
+    print(request.GET.get('text','default'))
+    return HttpResponse('text area analysis')

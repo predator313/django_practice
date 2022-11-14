@@ -24,6 +24,7 @@ urlpatterns = [
     path('about',views.about,name='about'),
     path('home',views.home,name='home'),
     path('markup',views.markup,name='markup'),
-    path('predator',views.predator,name='predator')
+    path('predator',views.predator,name='predator'),
+    path('capi',views.capi,name='capi')
     # path('/about',pre.fun,name='fun')
 ]

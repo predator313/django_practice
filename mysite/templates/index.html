@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello predator i am your template please use me in the django development {{name}} how are you and you are  {{age}} years old</h1>
-    <h2>its a just check for the index .html is working or not the main points to remember is that templates file location is same as the manga.py location</h2>
-
+    <h1 align="center">enter text below to analyze</h1>
+    <form action="/capi" method="get">
+        <textarea name="text" style="margin: 0px; width: 1499px; height: 294px;"></textarea>
+        <button type="submit">analyze-text</button>
+    </form>
 </body>
 </html>
