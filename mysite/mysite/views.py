@@ -1,5 +1,6 @@
 from django.http import HttpResponse;
 from django.shortcuts import render
+import string
 # from mysite import templates
 # from mysite import a
 def index(request):
@@ -19,6 +20,26 @@ def markup(request):
     return HttpResponse('<a href="https://www.leetcode.com/"target="_blank">Visit W3Schools.com!</a>')
 def pre(request):
     return HttpResponse('hello buddy django')
-def capi(request):
-    print(request.GET.get('text','default'))
-    return HttpResponse('text area analysis')
+# def capi(request):
+#     # print(request.GET.get('text','default'))
+#     djtext=request.GET.get('text','default')
+#     print(djtext)
+#     return HttpResponse('text area analysis')
+def analyze(request):
+    djtext=request.GET.get('text','default')
+    removepunc=request.GET.get('removepunc','off')
+    print(removepunc)
+    if(removepunc=='on'):
+        puntuations='''!"#$%&'()*+, -./:;<=>?@[\]^_`{|}~'''
+        # print(puntuations)
+        analyzed=""
+        for it in djtext:
+            if it not in puntuations:
+                analyzed+=it
+        params={'purpose':'to remove punctuation',
+                 'analyzed_text':analyzed}
+        return render(request,'analyze.html',params)
+        # return HttpResponse('hello')
+    else:
+        return HttpResponse('error please on the button')
+

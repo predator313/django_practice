@@ -25,6 +25,7 @@ urlpatterns = [
     path('home',views.home,name='home'),
     path('markup',views.markup,name='markup'),
     path('predator',views.predator,name='predator'),
-    path('capi',views.capi,name='capi')
+    # path('capi',views.capi,name='capi'),
+    path('analyze',views.analyze,name='analyze')
     # path('/about',pre.fun,name='fun')
 ]
