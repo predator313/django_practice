@@ -28,6 +28,7 @@ def pre(request):
 def analyze(request):
     djtext=request.GET.get('text','default')
     removepunc=request.GET.get('removepunc','off')
+    CAPATALIZE=request.GET.get('CAPATALIZE','off')
     print(removepunc)
     if(removepunc=='on'):
         puntuations='''!"#$%&'()*+, -./:;<=>?@[\]^_`{|}~'''
@@ -40,6 +41,15 @@ def analyze(request):
                  'analyzed_text':analyzed}
         return render(request,'analyze.html',params)
         # return HttpResponse('hello')
+    elif(CAPATALIZE=='on'):
+        analyzed=""
+        for it in djtext:
+            analyzed+=it.upper()
+        params={'purpose':'to capatalize',
+                 'analyzed_text':analyzed}
+        return render(request,'analyze.html',params)
     else:
         return HttpResponse('error please on the button')
 
+def aamir(request):
+    return render(request,'aa.html')

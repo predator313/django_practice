@@ -26,6 +26,8 @@ urlpatterns = [
     path('markup',views.markup,name='markup'),
     path('predator',views.predator,name='predator'),
     # path('capi',views.capi,name='capi'),
-    path('analyze',views.analyze,name='analyze')
+    path('analyze',views.analyze,name='analyze'),
+    path('aamir',views.aamir,name='aamir')
+    # path('CAPATALIZE',views.CAPATALIZE,name='CAPATALIZE')
     # path('/about',pre.fun,name='fun')
 ]
